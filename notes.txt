@@ -1,0 +1,30 @@
+A simple web app with Blazor, a web framework enabling .NET to build interactive UI.
+
+This app has been created with the following line:
+
+    dotnet new blazorserver -o BlazorApp --no-https -f net7.0
+
+
+The following command builds and starts the app:
+
+    dotnet watch
+
+
+Some files in this directory:
+
+• Program.cs is the entry point for the app that starts the server and where
+you configure the app services and middleware.
+
+• App.razor is the root component for the app.
+
+• The Pages directory contains some example web pages for the app.
+
+• BlazorApp.csproj defines the app project and its dependencies.
+
+• The launchSettings.json file inside the Properties directory defines different
+profile settings for the local development environment. A port number ranging
+between 5000-5300 is automatically assigned at project creation and saved on this file.
+
+Additional Notes:
+
+• .razor files are for Razor markup syntax for embedding .NET based code into webpages.

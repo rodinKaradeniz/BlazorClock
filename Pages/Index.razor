@@ -1,0 +1,56 @@
+﻿@page "/"
+
+@* <PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<Counter /> *@
+
+<div class="clock-container">
+    <div class="clock">
+        <span class="h12"></span>
+        <span class="h3"></span>
+        <span class="h6"></span>
+        <span class="h9"></span>
+        <div class="hour" style="transform:rotate(@(hr)deg);"><div></div></div>
+        <div class="minute" style="transform:rotate(@(min)deg);"><div></div></div>
+        <div class="second" style="transform:rotate(@(sec)deg);"><div></div></div>
+        @* <div class="hour" style=""><div></div></div>
+        <div class="minute" style=""><div></div></div>
+        <div class="second" style=""><div></div></div> *@
+        <span class="ctr"></span>
+    </div>
+</div>
+
+<button class="btn btn-primary" @onclick="GetCurrentTime">Get Current Time</button>
+
+@code {
+    double hr, min, sec;
+
+    private void GetCurrentTime()
+    {
+        var time = DateTime.Now;
+        hr = 360.0 * time.Hour / 12 + 30.0 * time.Minute / 60.0;
+        min = 360.0 * time.Minute / 60 + 6.0 * time.Second / 60.0;
+        sec = 360.0 * time.Second / 60 + 6.0 * time.Millisecond / 1000.0;
+    }
+    @* private void SetClock(object? stateInfo)
+    {
+        var time = DateTime.Now;
+        hr = 360.0 * time.Hour / 12 + 30.0 * time.Minute / 60.0;
+        min = 360.0 * time.Minute / 60 + 6.0 * time.Second / 60.0;
+        sec = 360.0 * time.Second / 60 + 6.0 * time.Millisecond / 1000.0;
+        StateHasChanged();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        SetClock(null);
+        System.Threading.Timer timer = new System.Threading.Timer(SetClock, new System.Threading.AutoResetEvent(false), 10, 10);
+    } *@
+}
