@@ -5,4 +5,6 @@ Assuming .NET 7.0 is installed, the following command will start the application
 
     dotnet watch
 
+A screenshot of the UI is provided below:
+
 ![alt text](https://github.com/rodinKaradeniz/BlazorClock/blob/main/output.png?raw=true)
